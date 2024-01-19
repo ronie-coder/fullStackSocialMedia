@@ -21,6 +21,6 @@ app.use('/api/posts',postRoute)
 app.use('/api/conversations',conversationRoute)
 app.use('/api/messages',messageRoute)
 app.use('/api/comments',commentRoute)
-app.listen(8800,(req,res)=>{
+app.listen(process.env.PORT || 8800,(req,res)=>{
     console.log("Server started");
 })
