@@ -112,7 +112,7 @@ const EditProfile = () => {
             />
           )}
         </div>
-        <div className="editProfileUsername">John</div>
+        <div className="editProfileUsername">{currentUser.username}</div>
         <div className="uploadtriggerText">
         <label htmlFor="fileInputForEditProfile" className="uploadImageText">
           Profile +
