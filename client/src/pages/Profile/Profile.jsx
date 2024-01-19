@@ -157,6 +157,7 @@ const Profile = () => {
         {userPostData && userPostData.map((up)=>(
             <UserPostThumbnail key={up._id} userPostData={up}></UserPostThumbnail>
         ))}
+        {userPostData?.length === 0 && <h3>No posts to show</h3>}
 
       </div>
     </div>
