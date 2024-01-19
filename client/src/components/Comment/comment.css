@@ -1,0 +1,47 @@
+.commentsContainer{
+    align-self: center;
+width: 100%;
+min-height: 30px;
+
+border-radius: 10px;
+-webkit-box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.2);
+box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.2);
+}
+.singlecommentcontainer{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.mentionUser{
+    font-size: 12px;
+    color: darkblue;
+}
+.commentDesc{
+    font-size: 15px;
+}
+.postCommentInput{
+    outline: none;
+    border: none;
+    width: 100%;
+    min-height: 35px;
+    padding-right: 28px;
+    padding-left: 10px;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.2);
+box-shadow: 1px 0px 5px 2px rgba(0,0,0,0.2);
+
+}
+.postCommentInput:focus{
+    outline: none;
+}
+.postInputContainer{
+    position: relative;
+}
+.postCommentSendIcon{
+    position: absolute;
+    right: 7px;
+    top: 9px;
+}

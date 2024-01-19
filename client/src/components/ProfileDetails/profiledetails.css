@@ -1,0 +1,30 @@
+.profileDetailsContainer{
+    margin-top: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+.profileName{
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+.profileDescription{
+    font-size: 12px;
+    width: 50vw;
+   
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+.profileDetailsContainerInner{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+    overflow: hidden;
+}

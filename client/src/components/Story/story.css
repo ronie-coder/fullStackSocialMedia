@@ -1,0 +1,30 @@
+.storyImageLocation{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+.storyContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7px;
+}
+.storyImage{
+   position: relative;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.onlineIndicator{
+    border: 2px solid white;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: rgb(85, 215, 85);
+    bottom: 1px;
+    right: -3px;
+}

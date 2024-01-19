@@ -1,0 +1,13 @@
+.allStoriesContainer{
+    display: flex;
+    min-width: 100%;
+    min-height: 87px;
+    
+    overflow-x: scroll;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+.allStoriesContainer::-webkit-scrollbar{
+    display: none;
+}

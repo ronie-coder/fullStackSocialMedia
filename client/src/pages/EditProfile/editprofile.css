@@ -1,0 +1,107 @@
+.editProfileMainContainer{
+    width: 100%;
+    min-height: 100vh;
+    padding: 20px 20px;
+   
+}
+.editProfileInnerContainer{
+    width: 100%;
+    min-height: calc(100vh - 40px);
+   
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding-top: 10px;
+}
+.editprofilePicture{
+    width: 100px;
+    height: 100px;
+    -webkit-box-shadow: -1px 2px 5px 2px rgba(0,0,0,0.11);
+-moz-box-shadow: -1px 2px 5px 2px rgba(0,0,0,0.11);
+box-shadow: -1px 2px 5px 2px rgba(0,0,0,0.11);
+    border-radius: 50%;
+    position: relative;
+}
+.editProfileBanner{
+    width: 100%;
+  
+    position: relative;
+    font-size: 22px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.editProfileLeftIcon{
+    position: absolute;
+    left: 13px;
+    top: 0;
+}
+.uploadImageText{
+    font-weight: 700;
+    color: lightskyblue;
+    margin-bottom: 30px;
+}
+.editProfileInputContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    margin-bottom: 15px;
+}
+.editprofileInput{
+    height: 30px;
+    width: 100%;
+    border:none
+}
+.editprofileInput:focus{
+    outline: none;
+}
+.editProfileinputWrapper{
+    width: 64%;
+    border-bottom: 0.2px solid rgba(44, 40, 40, 0.566);
+    padding-bottom: 4px;
+}
+.editProfileInputFieldName{
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(109, 98, 98, 0.544);
+}
+.editProfileUsername{
+    font-size: 20px;
+    font-weight: 900;
+}
+.editprofileSavebutton{
+    width: 84%;
+    padding: 10px 0;
+    border-radius: 20px;
+    border: none;
+    font-weight: 800;
+    background-color:#077afe9c;
+}
+.editedProfilePicture{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    
+}
+.editProfileImagepseudoUrl{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.uploadtriggerText{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

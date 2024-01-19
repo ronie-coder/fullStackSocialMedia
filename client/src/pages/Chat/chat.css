@@ -1,0 +1,125 @@
+.chatMainContainer{
+    width: 100%;
+    min-height: 100vh;
+ 
+    position: relative;
+}
+.chatInputMessage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    position: sticky;
+    bottom: 0;
+    border-radius: 14px 14px 0 0;
+    -webkit-box-shadow: -1px -4px 5px -1px rgba(0,0,0,0.17);
+-moz-box-shadow: -1px -4px 5px -1px rgba(0,0,0,0.17);
+box-shadow: -1px -4px 5px -1px rgba(0,0,0,0.17);
+}
+.enterTextInputMessage{
+    width: 89%;
+    height: 50px;
+    border-radius: 24px;
+    padding-left: 18px;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    font-weight: 200;
+    padding-right: 90px;
+    background-color: rgb(236, 236, 236);
+
+}
+.enterTextInputMessage:focus{
+    outline: none;
+}
+
+.stickerIcon{
+    position: absolute;
+    right: 4.2rem;
+}
+.verticalLineIcon{
+    position: absolute;
+    right: 5.4rem;
+    color: rgb(193, 191, 191);
+}
+.chatSendLineIcon{
+    position: absolute;
+    right: 2.4rem;
+}
+.chatPageTopInfo{
+    height: 87px;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    border-radius: 0 0 14px 14px;
+    -webkit-box-shadow: -1px 4px 5px -1px rgba(0,0,0,0.17);
+-moz-box-shadow: -1px 4px 5px -1px rgba(0,0,0,0.17);
+box-shadow: -1px 4px 5px -1px rgba(0,0,0,0.17);
+display: flex;
+padding: 10px 20px;
+align-items: center;
+background-color: white;
+
+}
+.conversationprofileNameChat{
+    font-size: 20px;
+    font-weight: 900;
+}
+.conversationLastMessageChat{
+    padding-left: 3px;
+    color:lightgreen;
+}
+.conversationUserInfoAndLastMessageChat{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+}
+.individualConversationImageChat{
+    height: 52px;
+    width:52px;
+    border-radius: 50%;
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    margin-left: 20px;
+    -webkit-box-shadow: -1px 0px 5px 2px rgba(0,0,0,0.17);
+-moz-box-shadow: -1px 0px 5px 2px rgba(0,0,0,0.17);
+box-shadow: -1px 0px 5px 2px rgba(0,0,0,0.17);
+}
+.allMessagesContainer{
+    min-height: calc(100vh - 167px);
+    width: 100%;
+    background-color:#F7F7F7;
+    overflow-y: scroll;
+    padding: 20px 20px;
+}
+.conversationLastMessageChatOffline{
+    padding-left: 3px;
+    color:gray;
+}
+.onlineofflineIndicatorChatOnline{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: rgb(66, 238, 66);
+    bottom: 0;
+    right: 0;
+    border: 2px solid white;
+}
+.onlineofflineIndicatorChatOffline{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: gray;
+    bottom: 0;
+    right: 0;
+    border: 2px solid white;
+}

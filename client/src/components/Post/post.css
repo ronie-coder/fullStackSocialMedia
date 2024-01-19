@@ -1,0 +1,145 @@
+.postContainer{
+    
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    margin-bottom: 18px;
+    padding: 6px;
+    border-radius: 9px;
+    -webkit-box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.13);
+-moz-box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.13);
+box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.13);
+}
+.postInfo{
+    height: 55px;
+    
+    width: 100%;
+    display: flex;
+    margin-bottom: 7px;
+}
+.postInfoLeft{
+    height: 100%;
+flex: 4;
+
+display: flex;
+align-items: center;
+}
+.postInfoRight{
+    flex: 1;
+    height: 100%;
+   
+}
+.postInfoLeft img{
+    width: 43px;
+    height: 43px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.postInfoLeftDetails{
+    width: 80%;
+    height: 100%;
+    
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.postInfoLeftDetailsname{
+    font-size: 14px;
+    font-weight: 600;
+}
+.postInfoLeftDetailsTime{
+    font-size: 11px;
+    color: gray;
+}
+.postInfoRight{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 7px;
+}
+.postHeroImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+   
+   
+}
+.postHeroImageContainer{
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0 5px;
+    margin-bottom: 7px;
+}
+.postInteractionIcons{
+    width: 100%;
+    height: 40px;
+   
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.likeIconContainer{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    
+}
+
+.messageIconContainer{
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.hamburgerMenu{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 170px;
+    height: 110px;
+    background-color: white;
+    right: 10px;
+    top: 12px;
+    border-radius: 6px;
+    transition: all ease-in 1s;
+    -webkit-box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.13);
+-moz-box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.13);
+box-shadow: 0px -1px 9px 1px rgba(0,0,0,0.13);
+padding: 12px;
+}
+.hamburgerCrossIcon{
+    position: absolute;
+    right: 0;
+    top: 9px;
+}
+.hamburgermenuActions{
+    margin-top: 15px;
+}
+.hamburgermenuActionsHeading{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 70%;
+    padding: 4px;
+    align-self: flex-start;
+    color: white;
+    border-radius: 4px;
+    background-color: #201A30;
+}
+.commentsContainer{
+    padding: 4px 12px;
+    width:100%;
+}
+.commentsContainerInner{
+    border-radius: 5px;
+    border: 1px solid black;
+}
+.postDescription{
+    padding: 5px 11px;
+    font-size: 14px;
+    font-weight: 700;
+}

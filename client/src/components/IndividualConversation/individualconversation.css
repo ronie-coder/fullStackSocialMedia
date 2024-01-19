@@ -1,0 +1,74 @@
+.individualConversationContainer{
+    width: 90%;
+    height: 65px;
+  
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: relative;
+    -webkit-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.25);
+box-shadow: -1px 1px 5px 0px rgba(0,0,0,0.25);
+}
+.individualConversationImage{
+    height: 52px;
+    width:52px;
+    border-radius: 50%;
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+.onlineofflineIndicator{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: rgb(66, 238, 66);
+    bottom: 0;
+    right: 0;
+    border: 2px solid white;
+}
+.individualConversationImageReal{
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    object-fit: cover;
+}
+.conversationUserInfoAndLastMessage{
+    display: flex;
+    flex-direction: column;
+    gap: 6px
+}
+.conversationMessagetime{
+    position: absolute;
+    height: 100%;
+    
+    display: flex;
+    padding-top: 16px;
+    
+     
+     
+     right: 9px;
+    
+}
+.conversationLastMessage{
+    font-weight: 300;
+}
+.conversationprofileName{
+    font-weight: 900;
+}
+
+.onlineofflineIndicatorOffline{
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: gray;
+    bottom: 0;
+    right: 0;
+    border: 2px solid white;
+}

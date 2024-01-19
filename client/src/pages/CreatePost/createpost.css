@@ -1,0 +1,122 @@
+.createPostmainContainer{
+    width: 100vw;
+    height: 100vh;
+    
+  
+    padding: 50px 20px;
+}
+.createpostInnerContainer{
+    width: 100%;
+    
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.createPostWelcomeMessage{
+    font-size: 1.1rem;
+    font-weight: 800;
+    text-align: center;
+}
+.createPostWelcomeMessageSuggestion{
+    font-size: 13px;
+    margin-top: 10px;
+    font-weight: 600;
+    color: rgb(88, 87, 87);
+    text-align: center;
+}
+.addPostImageIconContainer{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+.uploadImageTempView{
+    margin-top: 12px;
+    width: 80%;
+    height: 30vh;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.uploadImageTempViewIn{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    -webkit-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.25);
+box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.25);
+}
+.postTextArea{
+    margin-top: 13px;
+   height: 70px;
+   width: 100%;
+   border: 1px solid black;
+   border-radius: 4px;
+   padding: 4px 8px;
+}
+.postTextAreaContainer{
+    width: 100%;
+    padding: 10px 28px;
+    position: relative;
+   
+}
+.addPostanimated{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+}
+.createPostButtons{
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    
+}
+.createPostButton{
+    padding: 8px 25px;
+    border-radius: 15px;
+    border: none;
+    background-color: #009DF5;
+    color: white;
+    font-weight: 800;
+    -webkit-box-shadow: 2px 4px 5px 2px rgba(0,0,0,0.22);
+-moz-box-shadow: 2px 4px 5px 2px rgba(0,0,0,0.22);
+box-shadow: 2px 4px 5px 2px rgba(0,0,0,0.22);
+}
+.discardPostButton{
+    padding: 8px 20px;
+    border-radius: 15px;
+    border: none;
+    background-color: #E55F53;
+    color: white;
+    font-weight: 800;
+    -webkit-box-shadow: 2px 4px 5px 2px rgba(0,0,0,0.22);
+-moz-box-shadow: 2px 4px 5px 2px rgba(0,0,0,0.22);
+box-shadow: 2px 4px 5px 2px rgba(0,0,0,0.22);
+}
+.posttestarecross{
+    position: absolute;
+    top: 65px;
+    right: 35px;
+}
+.spinner-7 {
+    margin-top: 24px;
+    width: 40px;
+    aspect-ratio: 1;
+    --_c: radial-gradient(farthest-side,#25b09b 92%,#0000);
+    background: 
+      var(--_c) top,
+      var(--_c) left,
+      var(--_c) right,
+      var(--_c) bottom;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    animation: s7 1s infinite;
+  }
+  @keyframes s7 {to{transform: rotate(.5turn)}}

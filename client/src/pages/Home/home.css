@@ -1,0 +1,12 @@
+.home{
+    
+    max-width: 100%;
+    min-height: 100vh;
+  
+    padding: 30px 25px 32px 25px;
+}
+.homeContainer{
+    width: 100%;
+    min-height:100% ;
+    
+}

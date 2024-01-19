@@ -1,0 +1,54 @@
+.individualMessageContainer{
+    max-width: 100%;
+    min-height: 65px;
+   
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 8px;
+    gap: 7px;
+}
+.individualMessageContainer .messageFromFriend{
+    
+    max-width: 70vw;
+    min-height: 35px;
+    padding: 8px 14px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 0 11px 11px 11px;
+    font-size: 18px;
+    text-wrap: wrap;
+    font-weight: 550;
+}
+.individualMessageContainer .timeOfIndividualChat{
+    font-weight: 300;
+    padding-left: 5px;
+}
+
+
+.ownerMessageContainer{
+     max-width: 100%;
+    min-height: 65px;
+   
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    margin-bottom: 13px;
+    gap: 7px;
+}
+
+.ownerMessageContainer .messageFromFriend{
+    max-width: 70vw;
+    min-height: 35px;
+    padding: 8px 14px;
+    background-color: #703EFF;
+    border-radius: 11px 11px 0 11px;
+    color: white;
+    font-size: 18px;
+    font-weight: 550
+}
+.ownerMessageContainer .timeOfIndividualChat{
+    font-weight: 300;
+    padding-left: 3px;
+    padding-right: 5px;
+}
+

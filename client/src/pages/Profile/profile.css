@@ -1,0 +1,207 @@
+.profilemainContainer{
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    
+}
+.profileImageCoverImgContainer{
+    width: 100%;
+    
+    
+    position: relative;
+}
+.coverImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-box-shadow: 0px 11px 9px -8px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 11px 9px -8px rgba(0,0,0,0.2);
+box-shadow: 0px 11px 9px -8px rgba(0,0,0,0.2);
+}
+.profileImage{
+    width: 69px;
+    height: 69px;
+    border-radius: 50%;
+    
+    object-fit: cover;
+    
+}
+.profileimageinnerContainer{
+   
+    border-radius: 50%;
+    padding: 3px;
+    background-color: white;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: -35px;
+    left: 40.5%;
+}
+.profilePageNavigationButtons{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 99;
+    top: 14px;
+    padding: 0 30px;
+}
+.profileNavigationIcons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.792);
+}
+.followersInfoContainer{
+    padding: 3px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.followersInfo h5{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.followersInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.followersInfo h6{
+    font-weight: light;
+    color: rgb(95, 96, 97);
+}
+.followersInfoContainer{
+   
+}
+.FollowAndMessageButtonsContainer{
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+.followButton{
+    padding: 9px 30px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    background-color: #A975FF;
+    -webkit-box-shadow: 2px -1px 9px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 2px -1px 9px 1px rgba(0,0,0,0.2);
+box-shadow: 2px -1px 9px 1px rgba(0,0,0,0.2);
+
+}
+.messageButton{
+    font-weight: 800;
+    padding: 9px 25px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    -webkit-box-shadow: 2px -1px 9px 1px rgba(0,0,0,0.2);
+-moz-box-shadow: 2px -1px 9px 1px rgba(0,0,0,0.2);
+box-shadow: 2px -1px 9px 1px rgba(0,0,0,0.2);
+
+}
+.allUserPostsContainer{
+    padding: 0px 21px;
+    padding-right: 21px;
+    margin-top: 27px;
+    min-height: 80px;
+    width: 100%;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+}
+.loader {
+    position: relative;
+    font-size: 16px;
+    width: 5.5em;
+    height: 5.5em;
+  }
+  
+  .loader:before {
+    content: '';
+    position: absolute;
+    transform: translate(-50%, -50%) rotate(45deg);
+    height: 100%;
+    width: 4px;
+    background: #fff;
+    left: 50%;
+    top: 50%;
+  }
+  
+  .loader:after {
+    content: '';
+    position: absolute;
+    left: 0.2em;
+    bottom: 0.18em;
+    width: 1em;
+    height: 1em;
+    background-color: orange;
+    border-radius: 15%;
+    animation: rollingRock 2.5s cubic-bezier(.79, 0, .47, .97) infinite;
+  }
+  .loaderAnimationContainer{
+    width: 100vw;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  
+  @keyframes rollingRock {
+    0% {
+      transform: translate(0, -1em) rotate(-45deg)
+    }
+  
+    5% {
+      transform: translate(0, -1em) rotate(-50deg)
+    }
+  
+    20% {
+      transform: translate(1em, -2em) rotate(47deg)
+    }
+  
+    25% {
+      transform: translate(1em, -2em) rotate(45deg)
+    }
+  
+    30% {
+      transform: translate(1em, -2em) rotate(40deg)
+    }
+  
+    45% {
+      transform: translate(2em, -3em) rotate(137deg)
+    }
+  
+    50% {
+      transform: translate(2em, -3em) rotate(135deg)
+    }
+  
+    55% {
+      transform: translate(2em, -3em) rotate(130deg)
+    }
+  
+    70% {
+      transform: translate(3em, -4em) rotate(217deg)
+    }
+  
+    75% {
+      transform: translate(3em, -4em) rotate(220deg)
+    }
+  
+    100% {
+      transform: translate(0, -1em) rotate(-225deg)
+    }
+  }
