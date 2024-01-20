@@ -40,7 +40,8 @@ io.on('connection', (socket) => {
         console.log("sending msg");
         io.to(user.socketId).emit("getMessage",{
             senderId:senderId,
-            text:text
+            text:text,
+            imgUrl:text
         })
     })
     socket.on('logoutUser',({socketId})=>{

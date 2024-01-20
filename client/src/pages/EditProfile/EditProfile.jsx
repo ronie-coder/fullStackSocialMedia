@@ -13,11 +13,12 @@ const EditProfile = () => {
   const [userData, setUserData] = useState({});
   const { user: currentUser } = useContext(AuthContext);
   const [file, setfile] = useState(null);
-  const[coverfile, setCoverfile] = useState(null);
+  const [coverfile, setCoverfile] = useState(null);
   const [username, setusername] = useState("");
   const [city, setCity] = useState("");
   const [relation, setRelation] = useState("");
   const [password, setPassword] = useState("");
+
   useEffect(() => {
     const getData = async () => {
       const res = await axios.get(
@@ -29,57 +30,60 @@ const EditProfile = () => {
   }, [currentUser]);
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const storageRef = ref(storage, uuid());
-    if(file){
-        await uploadBytesResumable(storageRef, file).then(() => {
-            getDownloadURL(storageRef).then(async (downloadURL) => {
-              try {
-                await axios.put(`http://localhost:8800/api/user/${currentUser._id}`, {
-                  userId: currentUser._id,
-                  username: username,
-                  city: city,
-                  password: password,
-                  profilePicture: downloadURL,
-                  desc: relation
-                });
-                setfile(null)
-                console.log("checking if cover photo is selected");
-      
-                
-              } catch (error) {
-                console.log(error);
-              }
-            });
-          });
+    
+    if (file) {
+      console.log(file, "profile");
+      const profilePicStorageRef = ref(storage, uuid());
+      await uploadBytesResumable(profilePicStorageRef, file);
+      console.log("getting download url for profile pic", e);
+      const downloadURL = await getDownloadURL(profilePicStorageRef);
+      console.log(downloadURL);
+      try {
+        await axios.put(`http://localhost:8800/api/user/${currentUser._id}`, {
+          userId: currentUser._id,
+          username: username,
+          city: city,
+          password: password,
+          profilePicture: downloadURL,
+          desc: relation,
+        });
+        setfile(null);
+        console.log("checking if cover photo is selected");
+      } catch (error) {
+        console.log(error);
+      }
+
+      console.log("profile pic upload compleate");
     }
-   
-    if(coverfile){
-        await uploadBytesResumable(storageRef, coverfile).then(() => {
-            getDownloadURL(storageRef).then(async (downloadURL) => {
-              try {
-                await axios.put(`http://localhost:8800/api/user/${currentUser._id}`, {
-                  userId: currentUser._id,
-                  username: username,
-                  city: city,
-                  password: password,
-                  coverPicture: downloadURL,
-                  desc:relation
-                });
-      
-                console.log("updated successfully");
-      
-                navigate(`/profile/${currentUser.username}`);
-              } catch (error) {
-                console.log(error);
-              }
-            });
-          });
-    }
-    else{
-        console.log("no cover photo selected");
+
+    if (coverfile) {
+      console.log(coverfile, "cover");
+      const coverPicStorageRef = ref(storage, uuid()+'_cover');
+      await uploadBytesResumable(coverPicStorageRef, coverfile);
+      console.log("getting download url for cover pic", e);
+      const downloadURL = await getDownloadURL(coverPicStorageRef);
+      console.log(downloadURL);
+      try {
+        await axios.put(`http://localhost:8800/api/user/${currentUser._id}`, {
+          userId: currentUser._id,
+          username: username,
+          city: city,
+          password: password,
+          coverPicture: downloadURL,
+          desc: relation,
+        });
+
+        console.log("updated successfully");
+
         navigate(`/profile/${currentUser.username}`);
+      } catch (error) {
+        console.log(error);
+      }
+      console.log("cover pic upload compleate");
+    } else {
+      console.log("no cover photo selected");
+      navigate(`/profile/${currentUser.username}`);
     }
-   
   };
   return (
     <div className="editProfileMainContainer">
@@ -95,7 +99,7 @@ const EditProfile = () => {
           </Link>
         </div>
         <div className="editprofilePicture">
-          <img 
+          <img
             className="editedProfilePicture"
             src={
               userData.profilePicture
@@ -114,16 +118,30 @@ const EditProfile = () => {
         </div>
         <div className="editProfileUsername">{currentUser.username}</div>
         <div className="uploadtriggerText">
-        <label htmlFor="fileInputForEditProfile" className="uploadImageText">
-          Profile +
-        </label>
-        <label htmlFor="fileCoverInputForEditProfile" className="uploadImageText">
-          Cover +
-        </label>
+          <label htmlFor="fileInputForEditProfile" className="uploadImageText">
+            Profile +
+          </label>
+          <label
+            htmlFor="fileCoverInputForEditProfile"
+            className="uploadImageText"
+          >
+            Cover +
+          </label>
         </div>
-        <input onChange={(e)=> setCoverfile(e.target.files[0])} type="file" id="fileCoverInputForEditProfile" style={{display:"none"}}/>
         <input
-          onChange={(e) => setfile(e.target.files[0])}
+          onChange={(e) => {
+            console.log(e);
+            setCoverfile(e.target.files[0]);
+          }}
+          type="file"
+          id="fileCoverInputForEditProfile"
+          style={{ display: "none" }}
+        />
+        <input
+          onChange={(e) => {
+            console.log(e);
+            setfile(e.target.files[0]);
+          }}
           style={{ display: "none" }}
           type="file"
           id="fileInputForEditProfile"

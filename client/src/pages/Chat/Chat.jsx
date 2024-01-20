@@ -7,11 +7,14 @@ import { FaArrowLeft } from "react-icons/fa6";
 import Message from '../../components/Message/Message';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
-
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { storage } from '../../../firebase';
+import { v4 as uuid } from "uuid";
 import axios from 'axios';
 import { SocketContext } from '../../context/SocketContext/SocketContext';
 
 const Chat = () => {
+    const[chatImg, setChatImg] = useState(null);
     const[friendOnline, setFriendOnline] = useState(false)
     const scrollRef = useRef()
     const[textMsg, setTextMsg] = useState("")
@@ -22,7 +25,7 @@ const Chat = () => {
     const params = useParams()
 
    const findIfFriendOnline = (users) =>{
-   if(onlineUsers.some(user=>user.userId === params.friendId)){
+   if(onlineUsers?.some(user=>user.userId === params.friendId)){
     setFriendOnline(true)
    }else{
     setFriendOnline(false)
@@ -41,27 +44,39 @@ const Chat = () => {
     
     const handleFormSubmit =async (e)=>{
         e.preventDefault();
-        console.log("submitted");
+       
+        
+       
+        const imgPicStorageRef = ref(storage, uuid());
+        await uploadBytesResumable(imgPicStorageRef, chatImg);
+        console.log("getting download url for profile pic", e);
+        const downloadURL = await getDownloadURL(imgPicStorageRef);
         const data = {
             conversationId: params.conversationId,
             sender: currentUser._id,
-            text:textMsg
+            text:textMsg,
+            imgUrl:downloadURL,
         }
         socket.emit("sendMessage",{
             senderId: currentUser._id,
             recieverId: params.friendId,
-            text:textMsg
+            text:textMsg,
+            imgUrl:downloadURL
         })
+        console.log(downloadURL);
         try {
-            
             const res =await axios.post(`http://localhost:8800/api/messages/`,data)
             
             setChats([...chats,res.data])
             setTextMsg("")
-           
+            setChatImg(null)
+          console.log(submitted);
+         
         } catch (error) {
-            console.log(error);
+          console.log(error);
         }
+  
+        
     }
 
 
@@ -141,7 +156,8 @@ const Chat = () => {
 
         <form onSubmit={handleFormSubmit} className="chatInputMessage">
             <input value={textMsg} onChange={(e)=>setTextMsg(e.target.value)} type="text" className="enterTextInputMessage" />
-            <PiSticker size={23} className='stickerIcon'/>
+            <input type="file" id="imgChat" style={{display:"none"}}/>
+            <label style={{height:"100%",display:"flex",alignItems:"center",justifyContent:"center"}} htmlFor="imgChat"><PiSticker size={23} className='stickerIcon'/></label>
             <RxDividerVertical size={23} className='verticalLineIcon'/>
             <button style={{display:"flex", alignItems:"center"}} type='submit'><AiOutlineSend size={20} className='chatSendLineIcon'/></button>
         </form>
