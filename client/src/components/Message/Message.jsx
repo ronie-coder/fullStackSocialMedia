@@ -20,6 +20,7 @@ const Message = ({chatData}) => {
         <h5 className='timeOfIndividualChat'>{format(chatData.createdAt)}</h5>
     </div>
   )
+
 }
 
 export default Message

@@ -7,6 +7,7 @@ import { SocketContext } from '../../context/SocketContext/SocketContext'
 import {io} from 'socket.io-client'
 import { AuthContext } from '../../context/AuthContext'
 const Home = () => {
+
   const {user: currentUser} = useContext(AuthContext)
   const {socket, setSocket, onlineUsers, setOnlineUsers} = useContext(SocketContext)
  
@@ -20,6 +21,7 @@ useEffect(()=>{
       console.log(users);
   })
 },[currentUser,socket])
+
   return (
     <div className='home'>
         <div className="homeContainer">

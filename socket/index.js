@@ -53,4 +53,40 @@ io.on('connection', (socket) => {
         removeUser(socket.id)
         io.emit("getUsers",users)
     })
+    // on request to videocall
+    socket.on("requestToAcceptVideoCall",({senderId, recieverId, conversationId})=>{
+        const user = getUser(recieverId);
+        io.to(user.socketId).emit("AcceptOrRejectVideoCall",{
+            senderId:senderId,
+            conversationId:conversationId,
+        })
+    })
+    socket.on("rejectCall",({senderId, recieverId})=>{
+        const user = getUser(recieverId);
+        io.to(user.socketId).emit("callRejected",{
+            message: "video call request rejected"
+        })
+       
+    })
+    socket.on("selfRejectCall",({senderId, recieverId})=>{
+        const user = getUser(recieverId);
+        io.to(user.socketId).emit("callRejectedByOwner",{
+            message: "video call request rejected by owner"
+        })
+       
+    })
+    socket.on("callAccept",({senderId, recieverId, conversationId})=>{
+        const user = getUser(recieverId);
+        io.to(user.socketId).emit("callAccepted",{
+            message: "call accepted",
+            conversationId:conversationId
+        })
+    })
+    socket.on("videoCallEnded",({senderId, recieverId})=>{
+        const user = getUser(recieverId);
+        console.log(user?.socketId);
+        io.to(user?.socketId).emit("vidCallEnded",{
+            senderId:senderId
+        })  
+    })
   });

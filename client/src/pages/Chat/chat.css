@@ -123,3 +123,10 @@ box-shadow: -1px 0px 5px 2px rgba(0,0,0,0.17);
     right: 0;
     border: 2px solid white;
 }
+.videoCallIcon{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+}

@@ -1,0 +1,59 @@
+.vidRoom{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+.innerVid{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.button123container{
+    top: 28px;
+    left: 20px;
+    position: absolute;
+    z-index: 99;
+}
+.button123 {
+   
+    display: inline-block;
+    position: relative;
+    
+    overflow: hidden;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+    padding: 0.75em 1em;
+    color: rgb(255, 255, 255);
+    border: 0.15em solid rgb(255, 255, 255);
+    border-radius: calc(0.75em + 0.5em + 0.15em);
+    transition: 4s;
+  }
+  .button123:before, .button123:after {
+    content: "";
+    position: absolute;
+    top: -1.5em;
+    z-index: -1;
+    width: 200%;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 40%;
+    background-color: rgba(0, 0, 255, 0.25);
+    transition: 4s;
+  }
+  .button123:before {
+    left: -80%;
+    transform: translate3d(0, 5em, 0) rotate(-340deg);
+  }
+  .button123:after {
+    right: -80%;
+    transform: translate3d(0, 5em, 0) rotate(390deg);
+  }
+  .button123:hover, .button:focus {
+    color: white;
+  }
+  .button123:hover:before, .button123:hover:after, .button123:focus:before, .button123:focus:after {
+    transform: none;
+    background-color: rgba(0, 0, 255, 0.75);
+  }

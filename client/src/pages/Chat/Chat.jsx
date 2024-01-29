@@ -5,15 +5,18 @@ import { RxDividerVertical } from "react-icons/rx";
 import { AiOutlineSend } from "react-icons/ai";
 import { FaArrowLeft } from "react-icons/fa6";
 import Message from '../../components/Message/Message';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { storage } from '../../../firebase';
 import { v4 as uuid } from "uuid";
 import axios from 'axios';
 import { SocketContext } from '../../context/SocketContext/SocketContext';
+import { IoIosVideocam } from "react-icons/io";
+
 
 const Chat = () => {
+    
     const[chatImg, setChatImg] = useState(null);
     const[friendOnline, setFriendOnline] = useState(false)
     const scrollRef = useRef()
@@ -78,7 +81,14 @@ const Chat = () => {
   
         
     }
-
+    const handleVideoCallReq =async ()=>{
+       await  socket?.emit("requestToAcceptVideoCall",{
+            senderId : currentUser._id,
+            recieverId : params.friendId,
+            conversationId: params.conversationId
+        })
+        navigate(`/video/${params.conversationId}/${params.friendId}`)
+    }
 
     useEffect(()=>{
         socket?.on("getMessage",data =>{
@@ -140,6 +150,8 @@ const Chat = () => {
             <div className='conversationprofileNameChat'>{friendDetails.username}</div>
             <h5 className={friendOnline? 'conversationLastMessageChat':'conversationLastMessageChatOffline'}>{friendOnline ? "Online" : "Offline"}</h5>
         </div>
+        <div className='videoCallIcon'><IoIosVideocam onClick={handleVideoCallReq}  size={25}/></div>
+        
         </div>
 
 
@@ -158,7 +170,7 @@ const Chat = () => {
             <input value={textMsg} onChange={(e)=>setTextMsg(e.target.value)} type="text" className="enterTextInputMessage" />
             <input type="file" id="imgChat" style={{display:"none"}}/>
             <label style={{height:"100%",display:"flex",alignItems:"center",justifyContent:"center"}} htmlFor="imgChat"><PiSticker size={23} className='stickerIcon'/></label>
-            <RxDividerVertical size={23} className='verticalLineIcon'/>
+            <RxDividerVertical size={26} className='verticalLineIcon'/>
             <button style={{display:"flex", alignItems:"center"}} type='submit'><AiOutlineSend size={20} className='chatSendLineIcon'/></button>
         </form>
     </div>
