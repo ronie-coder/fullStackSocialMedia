@@ -28,10 +28,11 @@ const VideoRoom = ({data, frieId}) => {
     },[socket,navigate])
     
     const MyMeeting = async(element) =>{
-        const appID = 835209727;
-      const serverSecret = "226fb7286a0b9409e61a89dab43c19d2";
+        const appID = 1657746677;
+      const serverSecret = "4478b044a6416c2550f214755f66de1a";
       const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(appID, serverSecret, conversationId, Date.now().toString(),currentUser.username)
       const zc = ZegoUIKitPrebuilt.create(kitToken)
+     
       zc.joinRoom({
         container: element,
         scenario:{
@@ -41,9 +42,15 @@ const VideoRoom = ({data, frieId}) => {
         showPreJoinView: false,
         turnOnCameraWhenJoining:false,
         turnOnMicrophoneWhenJoining:false,
-        onLeaveRoom : () =>{
-          navigate('/messengerAll')
+        
+        
+        showLeaveRoomConfirmDialog:false,
+        showLeavingView:false,
+        onUserLeave:()=>{
+          navigate(`/messengerAll`)
         },
+        
+
         
         
       })

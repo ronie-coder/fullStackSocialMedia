@@ -16,7 +16,7 @@ const Conversation = () => {
     const[allOnlineUsers, setAllOnlineUsers] = useState([])
     const {user:currentUser} = useContext(AuthContext)
     const handlePrevious = ()=>{
-        navigate(-1)
+        navigate(`/home`)
     }
     
    
